@@ -6,6 +6,7 @@ workers_dev        = true
 [observability]
 enabled = true
 
+
 # 🔴 الريبو ده Worker وبس — الواجهة صفحة `Courier-Names.html` جوّه
 #    `Delivery-COD-Operations-Center` (نفس نمط `Partial-Delivery`).
 #    Workers Builds: Build watch paths = index.js + wrangler.toml (chip لكل
