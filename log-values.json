@@ -1,0 +1,47 @@
+{
+  "tool": "courier_names",
+  "since": "index.js v1.0.0",
+  "types": {
+    "add_courier": {
+      "result": [
+        "success",
+        "warning",
+        "error"
+      ],
+      "stage": "write",
+      "desc": "إضافة اسم مندوب لقايمة custom.courier — اتبعتت لشوبيفاي (نجحت واتأكدت · نجحت ومش مؤكّدة · شوبيفاي رفضت)"
+    },
+    "remove_courier": {
+      "result": [
+        "success",
+        "warning",
+        "error"
+      ],
+      "stage": "write",
+      "desc": "حذف اسم مندوب من قايمة custom.courier — اتبعتت لشوبيفاي. القيمة على الأوردرات القديمة مابتتمسحش"
+    },
+    "reorder_couriers": {
+      "result": [
+        "success",
+        "warning",
+        "error"
+      ],
+      "stage": "write",
+      "desc": "تغيير ترتيب قايمة المناديب (نفس الأسماء بترتيب جديد) — اتبعتت لشوبيفاي"
+    },
+    "rejected": {
+      "result": [
+        "rejected",
+        "already"
+      ],
+      "stage": [
+        "preflight",
+        "lookup"
+      ],
+      "desc": "اتوقف قبل أي كتابة: اسم مرفوض · اسم نظامي · قايمة اتغيّرت (rejected) أو الحالة المطلوبة موجودة أصلاً (already)"
+    }
+  },
+  "logAnchors": [
+    "tryLog"
+  ]
+}
