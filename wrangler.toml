@@ -1,0 +1,34 @@
+name               = "courier-names-worker"
+main               = "index.js"
+compatibility_date = "2025-01-01"
+workers_dev        = true
+
+[observability]
+enabled = true
+
+# 🔴 الريبو ده Worker وبس — الواجهة صفحة `Courier-Names.html` جوّه
+#    `Delivery-COD-Operations-Center` (نفس نمط `Partial-Delivery`).
+#    Workers Builds: Build watch paths = index.js + wrangler.toml (chip لكل
+#    واحد) — مش إلزامي هنا لأن الريبو مفيهوش ملفات واجهة، بس مفيش ضرر منه.
+
+[vars]
+SHOP_DOMAIN = "6c7e1a-53.myshopify.com"
+
+[[d1_databases]]
+binding       = "DB"
+database_name = "ecommoda-dev-logs"
+database_id   = "90db62d3-bd7e-4d92-912b-10fc78eeb565"
+
+# ─────────────────────────────────────────────────────────────
+# الأسرار — Dashboard → Settings → Variables → علّم "Secret"
+# ممنوع تتكتب في الريبو. بعد أي سر: Deployments → Version History → ⋯ → **Promote**
+#
+# WORKER_SECRET   ← 🔴 **قيمة مجموعة `delivery_cod_ops`** (نفس قيمة
+#                    Worker الهب وباقي الأعضاء). قيمة مختلفة = 401 من الـ Worker
+#                    ده بس والصفحة بتفتح عادي.
+# CLIENT_ID       ← Shopify OAuth (نفس الـ Custom App المشترك)
+# CLIENT_SECRET   ← Shopify OAuth
+#
+# ⚠️ الـ Custom App محتاج `write_orders` (تعديل تعريف ميتافيلد الأوردرات) —
+#    `?action=diag` بيقول لو ناقصة.
+# ─────────────────────────────────────────────────────────────
