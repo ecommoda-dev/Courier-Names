@@ -1,6 +1,6 @@
 {
   "tool": "courier_names",
-  "since": "index.js v1.0.0",
+  "since": "index.js v2.0.0",
   "types": {
     "add_courier": {
       "result": [
@@ -38,7 +38,35 @@
         "preflight",
         "lookup"
       ],
-      "desc": "اتوقف قبل أي كتابة: اسم مرفوض · اسم نظامي · قايمة اتغيّرت (rejected) أو الحالة المطلوبة موجودة أصلاً (already)"
+      "desc": "اتوقف قبل أي كتابة: اسم مرفوض · اسم نظامي · قايمة اتغيّرت · بيانات اتعدّلت من حد تاني · PIN مرفوض/مقفول (rejected) أو الحالة المطلوبة موجودة أصلاً (already)"
+    },
+    "profile_update": {
+      "result": [
+        "success"
+      ],
+      "stage": "write",
+      "desc": "تعديل بيانات بروفايل مندوب في D1 (تليفونين / extra) — extra.fields = أسماء الحقول بس، مفيش قيم"
+    },
+    "photo_update": {
+      "result": [
+        "success"
+      ],
+      "stage": "write",
+      "desc": "رفع أو حذف صورة المندوب (مصغّرة في D1) — extra.removed لو حذف"
+    },
+    "sensitive_update": {
+      "result": [
+        "success"
+      ],
+      "stage": "write",
+      "desc": "إدخال/تعديل/حذف الرقم القومي بعد PIN — ⛔ بلا أي قيمة في السجل، اسم الحقل بس"
+    },
+    "view_sensitive": {
+      "result": [
+        "success"
+      ],
+      "stage": "lookup",
+      "desc": "فتح الرقم القومي بعد PIN (سجل مراجعة — بيتكتب قبل عرض الرقم، مفيش عرض بلا سجل)"
     }
   },
   "logAnchors": [

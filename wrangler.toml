@@ -33,3 +33,8 @@ database_id   = "90db62d3-bd7e-4d92-912b-10fc78eeb565"
 # ⚠️ الـ Custom App محتاج `write_orders` (تعديل تعريف ميتافيلد الأوردرات) —
 #    `?action=diag` بيقول لو ناقصة.
 # ─────────────────────────────────────────────────────────────
+
+# 🔴 v2.0.0: الـ Worker بقى بيكتب جداول بروفايل المندوب في نفس D1 (`DB`) —
+#    courier_profiles · courier_photos · courier_sensitive · courier_pin_attempts
+#    بتتكوّن تلقائي (CREATE IF NOT EXISTS). وبيقرا `employees` (PIN الرقم القومي).
+#    صفر binding جديد ولا سر جديد.
